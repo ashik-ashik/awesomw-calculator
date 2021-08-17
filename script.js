@@ -39,12 +39,14 @@ function restValue(){
 function claculate(){
   // input er first item/ 0 index check kori -/+/. thakle caldulate hobe other wise hobe na
   // result field er 0 index e -/=/. ase ki na?
-  let firstValue = resultShow.value[0].match(/[-+.]/);
+  if(resultShow.value.length > 0){
+    let firstValue = resultShow.value[0].match(/[-+.]/);
   let lastValue = resultShow.value[resultShow.value.length -1].match(/[-+./*%]/);
   // +/-/. surute thakle or 0 index value 0/0 er besi hole calculate korbe
   // but last je kno oparetor thakle calculate hobe na
   if((firstValue || resultShow.value[0] >= 0) && !lastValue){
     resultShow.value = eval(resultShow.value);
+  }
   }
 }
 
