@@ -5,19 +5,45 @@ let resultShow = document.getElementById("calculate");
 function getValue(event){
   let inputValue = event.target.value;
 
-  resultShow.value  += inputValue;
+  // starting e %/* or / oparetor use korte dimu na
+  const notValid = inputValue.match(/[%*/]/);
+
+  if(resultShow.value.length == 0){
+    if(!notValid){
+      resultShow.value  += inputValue;
+    }
+  }else{
+    checkDuble(inputValue)
+
+  }
   
-  // return resultShow.value;
+  
+
+  // console.log(notValid)
 }
+
+// check duble oparetor
+function checkDuble(val){
+  const prevVal = resultShow.value;
+  if((val == "+" || val == "-" || val == "/" || val == "*" || val == "%") && (prevVal[prevVal.length -1] == "+" || prevVal[prevVal.length -1] == "-" || prevVal[prevVal.length -1] == "/" || prevVal[prevVal.length -1] == "*" || prevVal[prevVal.length -1] == "%")){
+    // console.log("double oparetor is not allowed")
+  }else{
+    resultShow.value  += val;
+  }
+}
+
 function restValue(){
   resultShow.value = "";
 }
+
 function claculate(){
   // input er first item/ 0 index check kori -/+/. thakle caldulate hobe other wise hobe na
   // result field er 0 index e -/=/. ase ki na?
-  let firstValue = resultShow.value[0].match(/[-+.]/)
+  let firstValue = resultShow.value[0].match(/[-+.]/);
+  let lastValue = resultShow.value[resultShow.value.length -1].match(/[-+./*%]/);
   // +/-/. surute thakle or 0 index value 0/0 er besi hole calculate korbe
-  if(firstValue || resultShow.value[0] >= 0){
+  // but last je kno oparetor thakle calculate hobe na
+  if((firstValue || resultShow.value[0] >= 0) && !lastValue){
     resultShow.value = eval(resultShow.value);
   }
 }

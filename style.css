@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+
+
+
+
 *{
   padding: 0;
   margin: 0;
@@ -15,30 +20,36 @@
 .calculator-body{
   width: 90%;
   max-width: 300px;
-  background: #ffffff;
+  background: #444;
   padding: 15px 25px;
   text-align: center;
-  box-shadow: inset 0 0 8px #000000,
-               0 0 9px #444444a9;
+  box-shadow:0 0 9px #444444a9;
   border-radius: 10px;
 }
 .title{
   margin-bottom: 20px;
   font-size: 10px;
+  color: #fff;
 }
 #calculate{
   width: 100%;
   border-radius: 5px;
   border: none;
   box-shadow: inset 0 0 4px #444;
-  padding: 3px 10px;
+  padding: 7px 10px;
   text-align: right;
-  font-size: 20px;
+  font-size: 25px;
   outline: none;
+  background: #BCCD96;
+  letter-spacing: 1px;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  /* font-family: 'Orbitron', sans-serif; */
+}
+#calculate::placeholder{
+  color: #000;
 }
 #calculate::-webkit-inner-spin-button{
   appearance: none;
-  
 }
 .calculator-head{
   margin-bottom: 20px;
@@ -46,7 +57,7 @@
 .buttons{
   display: grid;
   grid-template-columns: repeat(3, 1fr) 1.25fr;
-  grid-gap: 10px;
+  grid-gap: 18px 10px;
 }
 .buttons2 input,
 .buttons input{
@@ -57,11 +68,23 @@
   font-size: 15px;
   font-weight: 700;
   border-radius: 4px;
+  background: #111;
+  color: #fff;
+  box-shadow: #000000a4 0px 2px 4px, #00000083 0px 7px 13px -3px, #0000009d 0px -3px 0px inset;
+  transition: background 300ms;
+}
+.buttons2 input:hover,
+.buttons input:hover{
+  background: #01115c;
+}
+.buttons2 input:active,
+.buttons input:active{
+  box-shadow: #000000a4 0px 1px 2px, #00000083 0px 3px 6px -1px, #0000009d 0px -1px 0px inset;
 }
 .buttons2{
   display: grid;
-  grid-template-columns: repeat(4, 1fr );
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr) 1.25fr;
+  grid-gap: 18px 10px;
   margin-top: 10px;
 }
 .footer{
@@ -70,5 +93,5 @@
   display: block;
   padding-top: 20px;
   padding-bottom: 5px;
-  /* background: #666; */
+  color: #fff;
 }
