@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <main>
+    <section class="calculatro-section">
+      <div class="container">
+        <div class="calculator-body">
+          <div class="title">
+            <h2>Awesome Calsulator</h2>
+          </div>
+          <div class="calculator-head">
+            <input type="text" name="calculate" id="calculate" readonly placeholder="0" minlength="1" maxlength="12">
+          </div>
+          <div class="buttons">
+            <input type="button" value="7" onclick="getValue(event)" class="button">
+            <input type="button" value="8" onclick="getValue(event)" class="button">
+            <input type="button" value="9" onclick="getValue(event)" class="button">
+            <input type="button" value="/" onclick="getValue(event)" class="button">
+
+            <input type="button" value="4" onclick="getValue(event)" class="button">
+            <input type="button" value="5" onclick="getValue(event)" class="button">
+            <input type="button" value="6" onclick="getValue(event)" class="button">
+            <input type="button" value="*" onclick="getValue(event)" class="button">
+
+            <input type="button" value="1" onclick="getValue(event)" class="button">
+            <input type="button" value="2" onclick="getValue(event)" class="button">
+            <input type="button" value="3" onclick="getValue(event)" class="button">
+            <input type="button" value="-" onclick="getValue(event)" class="button">
+
+            <input type="button" value="0" onclick="getValue(event)" class="button">
+            <input type="button" value="00" onclick="getValue(event)" class="button">
+            <input type="button" value="." onclick="getValue(event)" class="button">
+            <input type="button" value="C" onclick="restValue()" class="button">
+          
+          </div>
+          <div class="buttons2">
+            <input type="button" value="=" class="button" onclick="claculate()" class="equal">
+            <input type="button" value="%" class="button" onclick="getValue(event)" class="plus">
+            <input type="button" value="+" class="button" onclick="getValue(event)">
+            <input type="button" value="x" class="button" onclick="deleteValue()">
+          </div>
+            <small class="footer">Lunch By Ashik Ali</small>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>
